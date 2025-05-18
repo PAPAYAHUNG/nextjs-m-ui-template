@@ -60,7 +60,18 @@ const sidebarConfig: SidebarSection[] = [
   {
     subheader: 'MANAGEMENT',
     items: [
-      { label: 'User', icon: PersonIcon, path: '/user', children: [] },
+      {
+        label: 'User',
+        icon: PersonIcon,
+        children: [
+          { label: 'Profile', path: '/user/profile', icon: PersonIcon },
+          { label: 'Cards', path: '/user/cards', icon: PersonIcon },
+          { label: 'List', path: '/user/list', icon: PersonIcon },
+          { label: 'Create', path: '/user/create', icon: PersonIcon },
+          { label: 'Edit', path: '/user/edit', icon: PersonIcon },
+          { label: 'Account', path: '/user/account', icon: PersonIcon },
+        ],
+      },
       { label: 'Product', icon: StoreIcon, path: '/product', children: [] },
       { label: 'Order', icon: ListAltIcon, path: '/order', children: [] },
       { label: 'Invoice', icon: ReceiptIcon, path: '/invoice', children: [] },
