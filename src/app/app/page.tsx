@@ -8,6 +8,10 @@ import DonutChartCard from '@/components/dashboard/DonutChartCard';
 import BarChartCard from '@/components/dashboard/BarChartCard';
 import NewsCard from '@/components/dashboard/NewsCard';
 import TrafficSourcesCard from '@/components/dashboard/TrafficSourcesCard';
+import InvoiceTable from '@/components/dashboard/InvoiceTable';
+import RelatedApps from '@/components/dashboard/RelatedApps';
+import TopCountries from '@/components/dashboard/TopCountries';
+import TopAuthors from '@/components/dashboard/TopAuthors';
 import PeopleIcon from '@mui/icons-material/People';
 import DownloadIcon from '@mui/icons-material/Download';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -41,6 +45,35 @@ export default function DashboardPage() {
         {/* Bar Chart Card */}
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 8' } }}>
           <BarChartCard />
+        </Grid>
+        {/* Invoice Table */}
+        <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 8' } }}>
+          <InvoiceTable />
+        </Grid>
+        {/* Related Applications */}
+        <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 4' } }}>
+          <RelatedApps />
+        </Grid>
+        {/* Top Countries */}
+        <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 6' } }}>
+          <TopCountries />
+        </Grid>
+        {/* Top Authors */}
+        <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 6' } }}>
+          <TopAuthors />
+        </Grid>
+        {/* Conversion and Applications Stats (Placeholder) */}
+        <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 6' } }}>
+          <Box sx={{ bgcolor: '#1de9b6', borderRadius: 2, p: 3, color: '#fff', textAlign: 'center' }}>
+            <Box sx={{ fontSize: 32, fontWeight: 700 }}>48%</Box>
+            <Box>38,566 Conversion</Box>
+          </Box>
+        </Grid>
+        <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 6' } }}>
+          <Box sx={{ bgcolor: '#2979ff', borderRadius: 2, p: 3, color: '#fff', textAlign: 'center' }}>
+            <Box sx={{ fontSize: 32, fontWeight: 700 }}>75%</Box>
+            <Box>55,566 Applications</Box>
+          </Box>
         </Grid>
         {/* News Card */}
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 6' } }}>
