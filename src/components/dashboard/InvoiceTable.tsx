@@ -1,4 +1,15 @@
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Chip, Paper } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Chip,
+  Paper,
+} from '@mui/material';
 
 const mockInvoices = [
   { id: 'INV-1990', category: 'Android', price: '$83.74', status: 'Paid' },
@@ -9,15 +20,17 @@ const mockInvoices = [
 ];
 
 const statusColor: Record<string, 'success' | 'error' | 'warning'> = {
-  'Paid': 'success',
+  Paid: 'success',
   'Out of date': 'error',
-  'Progress': 'warning',
+  Progress: 'warning',
 };
 
 export default function InvoiceTable() {
   return (
     <Box sx={{ mt: 3 }}>
-      <Typography variant="h6" sx={{ mb: 2 }}>New invoice</Typography>
+      <Typography variant="h6" sx={{ mb: 2 }}>
+        New invoice
+      </Typography>
       <TableContainer component={Paper} sx={{ background: 'transparent', boxShadow: 'none' }}>
         <Table>
           <TableHead>
@@ -29,7 +42,7 @@ export default function InvoiceTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {mockInvoices.map((row) => (
+            {mockInvoices.map(row => (
               <TableRow key={row.id}>
                 <TableCell>{row.id}</TableCell>
                 <TableCell>{row.category}</TableCell>
@@ -43,8 +56,10 @@ export default function InvoiceTable() {
         </Table>
       </TableContainer>
       <Box sx={{ textAlign: 'right', mt: 1 }}>
-        <Typography variant="body2" color="primary" sx={{ cursor: 'pointer' }}>View all &rarr;</Typography>
+        <Typography variant="body2" color="primary" sx={{ cursor: 'pointer' }}>
+          View all &rarr;
+        </Typography>
       </Box>
     </Box>
   );
-} 
+}

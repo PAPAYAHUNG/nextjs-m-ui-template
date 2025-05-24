@@ -30,13 +30,31 @@ export default function DashboardPage() {
         </Grid>
         {/* Stat Cards */}
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 4' } }}>
-          <StatCard icon={<PeopleIcon sx={{ color: '#00AB55', fontSize: 32 }} />} value="18,765" label="Total active users" trend="+2.6% last 7 days" trendColor="success" />
+          <StatCard
+            icon={<PeopleIcon sx={{ color: '#00AB55', fontSize: 32 }} />}
+            value="18,765"
+            label="Total active users"
+            trend="+2.6% last 7 days"
+            trendColor="success"
+          />
         </Grid>
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 4' } }}>
-          <StatCard icon={<CheckCircleIcon sx={{ color: '#2065D1', fontSize: 32 }} />} value="4,876" label="Total installed" trend="+0.2% last 7 days" trendColor="success" />
+          <StatCard
+            icon={<CheckCircleIcon sx={{ color: '#2065D1', fontSize: 32 }} />}
+            value="4,876"
+            label="Total installed"
+            trend="+0.2% last 7 days"
+            trendColor="success"
+          />
         </Grid>
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 4' } }}>
-          <StatCard icon={<DownloadIcon sx={{ color: '#FF5630', fontSize: 32 }} />} value="678" label="Total downloads" trend="-0.1% last 7 days" trendColor="error" />
+          <StatCard
+            icon={<DownloadIcon sx={{ color: '#FF5630', fontSize: 32 }} />}
+            value="678"
+            label="Total downloads"
+            trend="-0.1% last 7 days"
+            trendColor="error"
+          />
         </Grid>
         {/* Donut Chart Card */}
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 4' } }}>
@@ -64,13 +82,17 @@ export default function DashboardPage() {
         </Grid>
         {/* Conversion and Applications Stats (Placeholder) */}
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 6' } }}>
-          <Box sx={{ bgcolor: '#1de9b6', borderRadius: 2, p: 3, color: '#fff', textAlign: 'center' }}>
+          <Box
+            sx={{ bgcolor: '#1de9b6', borderRadius: 2, p: 3, color: '#fff', textAlign: 'center' }}
+          >
             <Box sx={{ fontSize: 32, fontWeight: 700 }}>48%</Box>
             <Box>38,566 Conversion</Box>
           </Box>
         </Grid>
         <Grid sx={{ gridColumn: { xs: 'span 12', md: 'span 6' } }}>
-          <Box sx={{ bgcolor: '#2979ff', borderRadius: 2, p: 3, color: '#fff', textAlign: 'center' }}>
+          <Box
+            sx={{ bgcolor: '#2979ff', borderRadius: 2, p: 3, color: '#fff', textAlign: 'center' }}
+          >
             <Box sx={{ fontSize: 32, fontWeight: 700 }}>75%</Box>
             <Box>55,566 Applications</Box>
           </Box>
@@ -86,4 +108,4 @@ export default function DashboardPage() {
       </Grid>
     </Box>
   );
-} 
+}

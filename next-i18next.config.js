@@ -13,4 +13,4 @@ const config = {
   fallbackLng: 'en',
 };
 
-export default config; 
+export default config;

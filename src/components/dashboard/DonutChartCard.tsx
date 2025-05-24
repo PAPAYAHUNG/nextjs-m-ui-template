@@ -10,14 +10,30 @@ const donutData = [
 
 export default function DonutChartCard() {
   return (
-    <Card sx={{ background: '#23283B', borderRadius: 3, boxShadow: 'none', minHeight: 240, width: '100%' }}>
+    <Card
+      sx={{
+        background: '#23283B',
+        borderRadius: 3,
+        boxShadow: 'none',
+        minHeight: 240,
+        width: '100%',
+      }}
+    >
       <CardContent>
         <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 2 }}>
           Current download
         </Typography>
         <ResponsiveContainer width="100%" height={180}>
           <PieChart>
-            <Pie data={donutData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={50} outerRadius={70}>
+            <Pie
+              data={donutData}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              innerRadius={50}
+              outerRadius={70}
+            >
               {donutData.map((entry, idx) => (
                 <Cell key={`cell-${idx}`} fill={entry.color} />
               ))}
@@ -25,10 +41,12 @@ export default function DonutChartCard() {
           </PieChart>
         </ResponsiveContainer>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 2 }}>
-          {donutData.map((entry) => (
+          {donutData.map(entry => (
             <Box key={entry.name} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <Box sx={{ width: 12, height: 12, borderRadius: '50%', background: entry.color }} />
-              <Typography variant="caption" sx={{ color: '#B0B8C1' }}>{entry.name}</Typography>
+              <Typography variant="caption" sx={{ color: '#B0B8C1' }}>
+                {entry.name}
+              </Typography>
             </Box>
           ))}
         </Box>
@@ -38,4 +56,4 @@ export default function DonutChartCard() {
       </CardContent>
     </Card>
   );
-} 
+}

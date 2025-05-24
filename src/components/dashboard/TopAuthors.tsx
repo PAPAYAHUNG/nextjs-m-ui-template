@@ -6,12 +6,12 @@ import {
   ListItemAvatar,
   ListItemText,
   Avatar,
-} from "@mui/material";
+} from '@mui/material';
 
 const mockAuthors = [
-  { name: "Jayvion Simon", likes: "9.91k", color: "success" },
-  { name: "Deja Brady", likes: "9.12k", color: "info" },
-  { name: "Lucian Obrien", likes: "1.95k", color: "error" },
+  { name: 'Jayvion Simon', likes: '9.91k', color: 'success' },
+  { name: 'Deja Brady', likes: '9.12k', color: 'info' },
+  { name: 'Lucian Obrien', likes: '1.95k', color: 'error' },
 ];
 
 export default function TopAuthors() {
@@ -21,17 +21,12 @@ export default function TopAuthors() {
         Top authors
       </Typography>
       <List>
-        {mockAuthors.map((author) => (
+        {mockAuthors.map(author => (
           <ListItem key={author.name}>
             <ListItemAvatar>
-              <Avatar sx={{ bgcolor: `${author.color}.main` }}>
-                {author.name[0]}
-              </Avatar>
+              <Avatar sx={{ bgcolor: `${author.color}.main` }}>{author.name[0]}</Avatar>
             </ListItemAvatar>
-            <ListItemText
-              primary={author.name}
-              secondary={`❤️ ${author.likes}`}
-            />
+            <ListItemText primary={author.name} secondary={`❤️ ${author.likes}`} />
           </ListItem>
         ))}
       </List>

@@ -1,4 +1,13 @@
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableRow, Paper } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Paper,
+} from '@mui/material';
 
 const mockCountries = [
   { flag: '🇩🇪', name: 'Germany', android: '9.91k', windows: '1.95k' },
@@ -11,13 +20,17 @@ const mockCountries = [
 export default function TopCountries() {
   return (
     <Box sx={{ mt: 3 }}>
-      <Typography variant="h6" sx={{ mb: 2 }}>Top installed countries</Typography>
+      <Typography variant="h6" sx={{ mb: 2 }}>
+        Top installed countries
+      </Typography>
       <TableContainer component={Paper} sx={{ background: 'transparent', boxShadow: 'none' }}>
         <Table size="small">
           <TableBody>
-            {mockCountries.map((row) => (
+            {mockCountries.map(row => (
               <TableRow key={row.name}>
-                <TableCell width={40}><span style={{ fontSize: 24 }}>{row.flag}</span></TableCell>
+                <TableCell width={40}>
+                  <span style={{ fontSize: 24 }}>{row.flag}</span>
+                </TableCell>
                 <TableCell>{row.name}</TableCell>
                 <TableCell>⬇️ {row.android}</TableCell>
                 <TableCell>💻 {row.windows}</TableCell>
@@ -28,4 +41,4 @@ export default function TopCountries() {
       </TableContainer>
     </Box>
   );
-} 
+}

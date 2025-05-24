@@ -1,5 +1,13 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
-import { BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip as RechartsTooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 
 const barData = [
   { month: 'Jan', Asia: 20, Europe: 40, Americas: 10 },
@@ -18,14 +26,29 @@ const barData = [
 
 export default function BarChartCard() {
   return (
-    <Card sx={{ background: '#23283B', borderRadius: 3, boxShadow: 'none', minHeight: 240, width: '100%' }}>
+    <Card
+      sx={{
+        background: '#23283B',
+        borderRadius: 3,
+        boxShadow: 'none',
+        minHeight: 240,
+        width: '100%',
+      }}
+    >
       <CardContent>
         <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 2 }}>
-          Area installed <span style={{ color: '#B0B8C1', fontWeight: 400 }}>(+43% than last year)</span>
+          Area installed{' '}
+          <span style={{ color: '#B0B8C1', fontWeight: 400 }}>(+43% than last year)</span>
         </Typography>
         <ResponsiveContainer width="100%" height={180}>
           <BarChart data={barData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-            <XAxis dataKey="month" stroke="#B0B8C1" fontSize={12} tickLine={false} axisLine={false} />
+            <XAxis
+              dataKey="month"
+              stroke="#B0B8C1"
+              fontSize={12}
+              tickLine={false}
+              axisLine={false}
+            />
             <YAxis stroke="#B0B8C1" fontSize={12} tickLine={false} axisLine={false} />
             <RechartsTooltip />
             <Legend />
@@ -35,11 +58,17 @@ export default function BarChartCard() {
           </BarChart>
         </ResponsiveContainer>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, mt: 2 }}>
-          <Typography variant="caption" sx={{ color: '#00AB55' }}>Asia 1.23k</Typography>
-          <Typography variant="caption" sx={{ color: '#2065D1' }}>Europe 6.79k</Typography>
-          <Typography variant="caption" sx={{ color: '#FF5630' }}>Americas 1.01k</Typography>
+          <Typography variant="caption" sx={{ color: '#00AB55' }}>
+            Asia 1.23k
+          </Typography>
+          <Typography variant="caption" sx={{ color: '#2065D1' }}>
+            Europe 6.79k
+          </Typography>
+          <Typography variant="caption" sx={{ color: '#FF5630' }}>
+            Americas 1.01k
+          </Typography>
         </Box>
       </CardContent>
     </Card>
   );
-} 
+}

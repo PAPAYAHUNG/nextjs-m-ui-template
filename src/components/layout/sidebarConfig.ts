@@ -88,12 +88,23 @@ const sidebarConfig: SidebarSection[] = [
   {
     subheader: 'sidebar.misc',
     items: [
-      { label: 'sidebar.permission', icon: SecurityIcon, path: '/permission', caption: 'sidebar.permission_caption' },
+      {
+        label: 'sidebar.permission',
+        icon: SecurityIcon,
+        path: '/permission',
+        caption: 'sidebar.permission_caption',
+      },
       { label: 'sidebar.level', icon: TuneIcon, path: '/level', children: [] },
       { label: 'sidebar.disabled', icon: BlockIcon, path: '/disabled', disabled: true },
-      { label: 'sidebar.label', icon: LabelIcon, path: '/label', chipLabel: 'sidebar.new', chipColor: 'info' },
+      {
+        label: 'sidebar.label',
+        icon: LabelIcon,
+        path: '/label',
+        chipLabel: 'sidebar.new',
+        chipColor: 'info',
+      },
     ],
   },
 ];
 
-export default sidebarConfig; 
+export default sidebarConfig;

@@ -1,5 +1,17 @@
 'use client';
-import { AppBar, Toolbar, Box, Typography, IconButton, InputBase, Badge, Avatar, Menu, MenuItem, Chip } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Typography,
+  IconButton,
+  InputBase,
+  Badge,
+  Avatar,
+  Menu,
+  MenuItem,
+  Chip,
+} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -20,18 +32,49 @@ export default function TopBar() {
   };
 
   return (
-    <AppBar position="static" elevation={0} sx={{ background: '#212531', boxShadow: 'none', borderBottom: '1px solid #23283B', zIndex: 1201 }}>
+    <AppBar
+      position="static"
+      elevation={0}
+      sx={{
+        background: '#212531',
+        boxShadow: 'none',
+        borderBottom: '1px solid #23283B',
+        zIndex: 1201,
+      }}
+    >
       <Toolbar sx={{ minHeight: 64, px: 3, justifyContent: 'space-between' }}>
         {/* Team Selector */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <Chip
             avatar={<Avatar src="/team1.svg" sx={{ width: 24, height: 24 }} />}
-            label={<Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <Typography variant="body2" sx={{ fontWeight: 700, color: '#fff' }}>Team 1</Typography>
-              <Chip label="Free" size="small" sx={{ ml: 1, fontSize: 10, height: 20, background: '#23283B', color: '#B0B8C1', fontWeight: 700 }} />
-              <ArrowDropDownIcon sx={{ color: '#B0B8C1', ml: 0.5 }} />
-            </Box>}
-            sx={{ background: '#23283B', color: '#fff', height: 40, borderRadius: 2, px: 1.5, fontWeight: 700 }}
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <Typography variant="body2" sx={{ fontWeight: 700, color: '#fff' }}>
+                  Team 1
+                </Typography>
+                <Chip
+                  label="Free"
+                  size="small"
+                  sx={{
+                    ml: 1,
+                    fontSize: 10,
+                    height: 20,
+                    background: '#23283B',
+                    color: '#B0B8C1',
+                    fontWeight: 700,
+                  }}
+                />
+                <ArrowDropDownIcon sx={{ color: '#B0B8C1', ml: 0.5 }} />
+              </Box>
+            }
+            sx={{
+              background: '#23283B',
+              color: '#fff',
+              height: 40,
+              borderRadius: 2,
+              px: 1.5,
+              fontWeight: 700,
+            }}
             clickable
           />
         </Box>
@@ -39,7 +82,17 @@ export default function TopBar() {
         {/* Search, Language, Notifications, Settings, User */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           {/* Search */}
-          <Box sx={{ display: 'flex', alignItems: 'center', background: '#23283B', borderRadius: 2, px: 1.5, py: 0.5, mr: 1 }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              background: '#23283B',
+              borderRadius: 2,
+              px: 1.5,
+              py: 0.5,
+              mr: 1,
+            }}
+          >
             <SearchIcon sx={{ color: '#B0B8C1', mr: 1 }} />
             <InputBase
               placeholder="⌘K"
@@ -50,7 +103,7 @@ export default function TopBar() {
           </Box>
 
           {/* Language Switcher */}
-          <LanguageSwitcher/>
+          <LanguageSwitcher />
           {/* <LanguageSwitcher /> */}
 
           {/* Notifications */}
@@ -83,4 +136,4 @@ export default function TopBar() {
       </Toolbar>
     </AppBar>
   );
-} 
+}

@@ -1,6 +1,6 @@
-import { getDictionary } from "@/lib/dictionary";
-import type { Locale } from "@/lib/i18n-config";
-import LanguageSwitcher from "@/components/common/LanguageSwitcher";
+import { getDictionary } from '@/lib/dictionary';
+import type { Locale } from '@/lib/i18n-config';
+import LanguageSwitcher from '@/components/common/LanguageSwitcher';
 
 export default async function Home({ params }: { params: { lang: string } }) {
   const { lang } = await Promise.resolve(params);

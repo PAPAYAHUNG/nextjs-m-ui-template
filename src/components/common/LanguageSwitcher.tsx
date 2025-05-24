@@ -1,39 +1,31 @@
-"use client"; // Mark as client component since it uses client-side hooks
+'use client'; // Mark as client component since it uses client-side hooks
 
-import { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import {
-  Button,
-  Menu,
-  MenuItem,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
+import { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
+import { Button, Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 
 // Use your required codes and labels
 const languages = [
-  { code: "en-US", label: "English", flag: "🇬🇧" },
-  { code: "vi-VN", label: "Vietnamese", flag: "🇻🇳" },
-  { code: "fr-FR", label: "Français", flag: "🇫🇷" },
+  { code: 'en-US', label: 'English', flag: '🇬🇧' },
+  { code: 'vi-VN', label: 'Vietnamese', flag: '🇻🇳' },
+  { code: 'fr-FR', label: 'Français', flag: '🇫🇷' },
 ];
 
 export default function LanguageSwitcher() {
   const router = useRouter();
-  const pathname = usePathname() || "/";
-  const currentLocale = pathname.split("/")[1] || "en-US";
-  const currentLang =
-    languages.find((l) => l.code === currentLocale) || languages[0];
+  const pathname = usePathname() || '/';
+  const currentLocale = pathname.split('/')[1] || 'en-US';
+  const currentLang = languages.find(l => l.code === currentLocale) || languages[0];
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleOpen = (event: React.MouseEvent<HTMLElement>) =>
-    setAnchorEl(event.currentTarget);
+  const handleOpen = (event: React.MouseEvent<HTMLElement>) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
 
   const handleLanguageChange = (locale: string) => {
-    const segments = pathname.split("/");
+    const segments = pathname.split('/');
     segments[1] = locale;
-    router.push(segments.join("/"));
+    router.push(segments.join('/'));
     handleClose();
   };
 
@@ -42,17 +34,14 @@ export default function LanguageSwitcher() {
       <Button
         onClick={handleOpen}
         sx={{
-          borderRadius: "50%",
+          borderRadius: '50%',
           minWidth: 40,
           p: 0,
-          bgcolor: "background.paper",
+          bgcolor: 'background.paper',
           boxShadow: 1,
         }}
       >
-        <span
-          style={{ fontSize: 22 }}
-          className="flex items-center justify-center"
-        >
+        <span style={{ fontSize: 22 }} className="flex items-center justify-center">
           {currentLang.flag}
         </span>
       </Button>
@@ -66,7 +55,7 @@ export default function LanguageSwitcher() {
           },
         }}
       >
-        {languages.map((lang) => (
+        {languages.map(lang => (
           <MenuItem
             key={lang.code}
             selected={lang.code === currentLocale}

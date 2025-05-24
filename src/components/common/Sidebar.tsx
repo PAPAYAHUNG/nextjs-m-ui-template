@@ -1,10 +1,25 @@
 'use client';
 import { usePathname, useRouter } from 'next/navigation';
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Divider, Box, Chip, Badge, Tooltip, Collapse } from '@mui/material';
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+  Divider,
+  Box,
+  Chip,
+  Badge,
+  Tooltip,
+  Collapse,
+} from '@mui/material';
 import { useState } from 'react';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import sidebarConfig, { SidebarItem } from '../layout/sidebarConfig';
+import Image from 'next/image';
 
 const drawerWidth = 260;
 
@@ -28,7 +43,7 @@ export default function Sidebar({ dictionary }: { dictionary: Record<string, unk
 
   const handleItemClick = (item: SidebarItem) => {
     if (item.children && item.children.length > 0) {
-      setOpenItems((prev) => ({
+      setOpenItems(prev => ({
         ...prev,
         [item.label]: !prev[item.label],
       }));
@@ -43,9 +58,14 @@ export default function Sidebar({ dictionary }: { dictionary: Record<string, unk
     const hasChildren = item.children && item.children.length > 0;
     const isOpen = openItems[item.label];
 
-
     return (
-      <Tooltip key={item.label} title={item.caption ? getDictValue(dictionary, item.caption) : ''} placement="right" arrow disableHoverListener={!item.caption}>
+      <Tooltip
+        key={item.label}
+        title={item.caption ? getDictValue(dictionary, item.caption) : ''}
+        placement="right"
+        arrow
+        disableHoverListener={!item.caption}
+      >
         <span>
           <ListItem disablePadding sx={{ opacity: item.disabled ? 0.5 : 1 }}>
             <ListItemButton
@@ -97,7 +117,7 @@ export default function Sidebar({ dictionary }: { dictionary: Record<string, unk
           {hasChildren && (
             <Collapse in={isOpen} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                {item.children?.map((child) => renderMenuItem(child, level + 1))}
+                {item.children?.map(child => renderMenuItem(child, level + 1))}
               </List>
             </Collapse>
           )}
@@ -124,22 +144,23 @@ export default function Sidebar({ dictionary }: { dictionary: Record<string, unk
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         {/* Logo */}
         <Box sx={{ p: 3, pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src="/logo.svg" alt="Logo" style={{ height: 32 }} />
+          <Image src="/logo.svg" alt="Logo" width={32} height={32} priority />
         </Box>
         <Divider sx={{ borderColor: 'rgba(255,255,255,0.08)' }} />
         <Box sx={{ flex: 1, overflowY: 'auto', pt: 1 }}>
-          {sidebarConfig.map((section) => (
+          {sidebarConfig.map(section => (
             <Box key={section.subheader} sx={{ mb: 2 }}>
-              <Typography variant="caption" sx={{ color: '#7C8FAC', pl: 3, mb: 1, letterSpacing: 1, fontWeight: 700 }}>
+              <Typography
+                variant="caption"
+                sx={{ color: '#7C8FAC', pl: 3, mb: 1, letterSpacing: 1, fontWeight: 700 }}
+              >
                 {getDictValue(dictionary, section.subheader)}
               </Typography>
-              <List disablePadding>
-                {section.items.map((item) => renderMenuItem(item))}
-              </List>
+              <List disablePadding>{section.items.map(item => renderMenuItem(item))}</List>
             </Box>
           ))}
         </Box>
       </Box>
     </Drawer>
   );
-} 
+}

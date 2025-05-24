@@ -5,7 +5,7 @@ const nextConfig = {
   i18n: config.i18n,
   experimental: {
     serverExternalPackages: [],
-  }
+  },
 };
 
-export default nextConfig; 
+export default nextConfig;
