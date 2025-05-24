@@ -1,4 +1,5 @@
-import { AppBar, Toolbar, Box, Typography, IconButton, InputBase, Badge, Avatar, Menu, MenuItem, Chip, Tooltip } from '@mui/material';
+'use client';
+import { AppBar, Toolbar, Box, Typography, IconButton, InputBase, Badge, Avatar, Menu, MenuItem, Chip } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -6,23 +7,16 @@ import GroupIcon from '@mui/icons-material/Group';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import React from 'react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function TopBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [langAnchorEl, setLangAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const handleLangMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setLangAnchorEl(event.currentTarget);
-  };
-  const handleLangClose = () => {
-    setLangAnchorEl(null);
   };
 
   return (
@@ -56,15 +50,8 @@ export default function TopBar() {
           </Box>
 
           {/* Language Switcher */}
-          <Tooltip title="Change language">
-            <IconButton onClick={handleLangMenu} sx={{ color: '#fff' }}>
-              <img src="/flags/gb.svg" alt="EN" style={{ width: 24, height: 24, borderRadius: 4 }} />
-            </IconButton>
-          </Tooltip>
-          <Menu anchorEl={langAnchorEl} open={Boolean(langAnchorEl)} onClose={handleLangClose}>
-            <MenuItem onClick={handleLangClose}><img src="/flags/gb.svg" alt="EN" style={{ width: 20, marginRight: 8 }} /> English</MenuItem>
-            <MenuItem onClick={handleLangClose}><img src="/flags/fr.svg" alt="FR" style={{ width: 20, marginRight: 8 }} /> French</MenuItem>
-          </Menu>
+          <LanguageSwitcher/>
+          {/* <LanguageSwitcher /> */}
 
           {/* Notifications */}
           <IconButton sx={{ color: '#fff' }}>

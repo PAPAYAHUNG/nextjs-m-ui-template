@@ -1,5 +1,6 @@
 import { Box, Typography, List, ListItem, ListItemAvatar, ListItemText, Avatar, Chip, Tabs, Tab } from '@mui/material';
 import AppsIcon from '@mui/icons-material/Apps';
+import { useTranslation } from 'react-i18next';
 
 const mockApps = [
   { name: 'Microsoft office 365', status: 'Free', downloads: '9.91k', size: '9.68 Mb', stars: '9.91k' },
@@ -10,13 +11,14 @@ const mockApps = [
 ];
 
 export default function RelatedApps() {
+  const { t } = useTranslation('common');
   return (
     <Box sx={{ mt: 3 }}>
-      <Typography variant="h6" sx={{ mb: 2 }}>Related applications</Typography>
+      <Typography variant="h6" sx={{ mb: 2 }}>{t('related_applications')}</Typography>
       <Tabs value={0} sx={{ mb: 1 }}>
-        <Tab label="Top 7 days" />
-        <Tab label="Top 30 days" />
-        <Tab label="All times" />
+        <Tab label={t('top_7_days', 'Top 7 days')} />
+        <Tab label={t('top_30_days', 'Top 30 days')} />
+        <Tab label={t('all_times', 'All times')} />
       </Tabs>
       <List>
         {mockApps.map((app) => (
