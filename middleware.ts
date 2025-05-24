@@ -31,6 +31,8 @@ export function middleware(request: NextRequest) {
     const locale = getLocale(request);
     return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
