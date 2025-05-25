@@ -11,7 +11,6 @@ interface ClientLayoutProps {
 }
 
 export default function ClientLayout({ children, lang, dictionary }: ClientLayoutProps) {
-  console.log(dictionary);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
