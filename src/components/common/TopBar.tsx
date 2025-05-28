@@ -20,15 +20,23 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import React from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
+import SettingsDrawer from './SettingsDrawer';
 
 export default function TopBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [settingsOpen, setSettingsOpen] = React.useState(false);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const handleOpenSettings = () => {
+    setSettingsOpen(true);
+  };
+  const handleCloseSettings = () => {
+    setSettingsOpen(false);
   };
 
   return (
@@ -120,7 +128,7 @@ export default function TopBar() {
           <FiberManualRecordIcon sx={{ color: '#FF5630', fontSize: 14, ml: -1, mr: 1 }} />
 
           {/* Settings */}
-          <IconButton sx={{ color: '#fff' }}>
+          <IconButton sx={{ color: '#fff' }} onClick={handleOpenSettings}>
             <SettingsIcon />
           </IconButton>
 
@@ -134,6 +142,7 @@ export default function TopBar() {
           </Menu>
         </Box>
       </Toolbar>
+      <SettingsDrawer open={settingsOpen} onClose={handleCloseSettings} />
     </AppBar>
   );
 }
